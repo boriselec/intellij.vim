@@ -20,6 +20,7 @@ let s:cyan         = { "gui": "#007074", "cterm": "6" }
 let s:white        = { "gui": "#fafafa", "cterm": "231" }
 let s:brown        = { "gui": "#855800", "cterm": "136" }
 let s:dark         = { "gui": "#000000", "cterm": "0" }
+let s:bluish       = { "gui": "#ccccff", "cterm": "18" }
 
 let s:fg           = s:black
 let s:bg           = s:white
@@ -71,8 +72,8 @@ call s:h("DiffChange", s:yellow, "", "")
 call s:h("DiffDelete", s:red, "", "")
 call s:h("DiffText", s:blue, "", "")
 
-call s:h("IncSearch", s:bg, s:yellow, "")
-call s:h("Search", s:bg, s:yellow, "")
+call s:h("IncSearch", s:fg, s:bluish, "")
+call s:h("Search", s:fg, s:bluish, "")
 
 call s:h("ErrorMsg", s:fg, "", "")
 call s:h("ModeMsg", s:fg, "", "")
