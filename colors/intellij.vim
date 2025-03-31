@@ -74,6 +74,7 @@ call s:h("DiffText", s:blue, "", "")
 
 call s:h("IncSearch", s:fg, s:bluish, "")
 call s:h("Search", s:fg, s:bluish, "")
+call s:h("CurSearch", s:fg, s:bluish, "")
 
 call s:h("ErrorMsg", s:fg, "", "")
 call s:h("ModeMsg", s:fg, "", "")
