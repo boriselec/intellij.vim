@@ -21,6 +21,7 @@ let s:white        = { "gui": "#fafafa", "cterm": "231" }
 let s:brown        = { "gui": "#855800", "cterm": "136" }
 let s:dark         = { "gui": "#000000", "cterm": "0" }
 let s:bluish       = { "gui": "#ccccff", "cterm": "18" }
+let s:light_bluish = { "gui": "#f6f8fd", "cterm": "255" }
 
 let s:fg           = s:black
 let s:bg           = s:white
@@ -62,7 +63,7 @@ call s:h("NonText", s:gray, "", "")
 
 call s:h("Cursor", s:bg, s:blue, "")
 call s:h("CursorColumn", "", s:cursor_line, "")
-call s:h("CursorLine", "", s:light_yellow, "")
+call s:h("CursorLine", "", s:light_bluish, "")
 
 call s:h("LineNr", s:gutter_fg, s:gutter_bg, "")
 call s:h("CursorLineNr", s:fg, "", "")
