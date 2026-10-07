@@ -1,7 +1,7 @@
 " Common colors {{{
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-let s:blue   = [ '#61afef', 75 ]
+let s:blue   = [ '#bfceff', 153 ]
 let s:green  = [ '#98c379', 76 ]
 let s:purple = [ '#c678dd', 176 ]
 let s:red1   = [ '#e06c75', 168 ]
