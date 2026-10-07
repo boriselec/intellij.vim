@@ -111,7 +111,7 @@ call s:h("Folded", s:fg, s:cursor_line, "")
 call s:h("FoldColumn", s:fg, s:cursor_line, "")
 call s:h("SignColumn", s:fg, "", "")
 
-call s:h("MatchParen", s:blue, "", "underline")
+call s:h("MatchParen", "", { "gui": "#93d9d9", "cterm": "116" }, "")
 call s:h("SpecialKey", s:fg, "", "")
 call s:h("Title", s:green, "", "")
 call s:h("WildMenu", s:fg, "", "")
@@ -194,6 +194,61 @@ call s:h("goPredefinedIdentifiers", s:blue, "", "")
 call s:h("goDeclType", s:blue, "", "")
 call s:h("goDeclaration", s:blue, "", "")
 call s:h("goParamType", s:blue, "", "")
+" }}}
+
+" {{{ Java
+" IntelliJ Light. java.vim colors keywords, literals and comments, and jdtls
+" semantic tokens color names over it: an @lsp.type group sets a color, the
+" documentation modifier grays names inside Javadoc back out, and the typemod
+" groups add the declaration color and the static italic.
+let s:field  = { "gui": "#871094", "cterm": "90" }
+let s:decl   = { "gui": "#00627a", "cterm": "24" }
+let s:tparam = { "gui": "#007e8a", "cterm": "30" }
+let s:meta   = { "gui": "#9e880d", "cterm": "136" }
+let s:escape = { "gui": "#0037a6", "cterm": "25" }
+let s:docval = { "gui": "#3d3d3d", "cterm": "237" }
+
+" One color for every keyword; java.vim spreads them over seven groups.
+for s:g in ["javaExternal", "javaConstant", "javaTypedef", "javaOperator",
+      \ "javaStorageClass", "javaExceptions", "javaAssert", "javaMethodDecl",
+      \ "javaClassDecl", "javaScopeDecl", "javaConceptKind"]
+    call s:h(s:g, s:blue, "", "")
+endfor
+call s:h("javaAnnotation", s:meta, "", "")
+call s:h("javaSpecialChar", s:escape, "", "")
+
+" Type and package names stay plain, and so do method calls.
+for s:t in ["class", "interface", "enum", "record", "type", "namespace",
+      \ "method", "parameter", "variable", "annotationMember"]
+    call s:h("@lsp.type." . s:t . ".java", s:fg, "", "")
+endfor
+call s:h("@lsp.type.modifier.java", s:blue, "", "")
+call s:h("@lsp.type.keyword.java", s:blue, "", "")
+call s:h("@lsp.type.decorator.java", s:meta, "", "")
+call s:h("@lsp.type.typeParameter.java", s:tparam, "", "")
+call s:h("@lsp.type.property.java", s:field, "", "")
+call s:h("@lsp.type.recordComponent.java", s:field, "", "")
+call s:h("@lsp.type.enumMember.java", s:field, "", "italic")
+call s:h("@lsp.typemod.method.declaration.java", s:decl, "", "")
+call s:h("@lsp.typemod.method.static.java", "", "", "italic")
+call s:h("@lsp.typemod.property.static.java", "", "", "italic")
+
+call s:h("@lsp.mod.documentation.java", s:comment_fg, "", "italic")
+call s:h("@lsp.typemod.keyword.documentation.java", s:comment_fg, "", "italic,underline")
+call s:h("@lsp.typemod.parameter.documentation.java", s:docval, "", "italic")
+call s:h("@lsp.typemod.typeParameter.documentation.java", s:docval, "", "italic")
+" }}}
+
+" {{{ LSP
+" IntelliJ Light's inspection colors: errors get a red wave, warnings a yellow
+" background, weak warnings a gray wave, unused code plain gray.
+hi DiagnosticUnderlineError gui=undercurl cterm=undercurl guisp=#ff0000
+hi DiagnosticUnderlineInfo gui=undercurl cterm=undercurl guisp=#cccccc
+hi DiagnosticUnderlineHint gui=undercurl cterm=undercurl guisp=#cccccc
+call s:h("DiagnosticUnderlineWarn", "", { "gui": "#fcf4d4", "cterm": "230" }, "")
+call s:h("DiagnosticUnnecessary", { "gui": "#808080", "cterm": "244" }, "", "")
+call s:h("LspInlayHint", { "gui": "#7a7a7a", "cterm": "243" },
+      \ { "gui": "#ededed", "cterm": "255" }, "")
 " }}}
 
 " {{{ Typescript
