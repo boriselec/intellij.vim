@@ -13,7 +13,7 @@ let s:red          = { "gui": "#e45649", "cterm": "167" }
 let s:green        = { "gui": "#50a14f", "cterm": "71" }
 let s:light_yellow = { "gui": "#fffbe6", "cterm": "136" }
 let s:yellow       = { "gui": "#c18401", "cterm": "136" }
-let s:blue         = { "gui": "#001cac", "cterm": "18" }
+let s:blue         = { "gui": "#0033b3", "cterm": "25" }
 let s:lightblue    = { "gui": "#2469d2", "cterm": "26" }
 let s:purple       = { "gui": "#a626a4", "cterm": "127" }
 let s:cyan         = { "gui": "#007074", "cterm": "6" }
@@ -26,7 +26,9 @@ let s:light_bluish = { "gui": "#f6f8fd", "cterm": "255" }
 let s:fg           = s:black
 let s:bg           = s:white
 
-let s:comment_fg   = { "gui": "#a0a1a7", "cterm": "247" }
+let s:comment_fg   = { "gui": "#8c8c8c", "cterm": "245" }
+let s:string       = { "gui": "#067d17", "cterm": "28" }
+let s:number       = { "gui": "#1750eb", "cterm": "26" }
 let s:gutter_bg    = { "gui": "#fafafa", "cterm": "231" }
 let s:gutter_fg    = { "gui": "#d4d4d4", "cterm": "252" }
 
@@ -120,11 +122,11 @@ call s:h("WildMenu", s:fg, "", "")
 " Syntax colors {{{
 call s:h("Comment", s:comment_fg, "", "italic")
 call s:h("Constant", s:debug, "", "")
-call s:h("String", s:green, "", "")
-call s:h("Character", s:green, "", "")
-call s:h("Number", s:blue, "", "")
+call s:h("String", s:string, "", "")
+call s:h("Character", s:string, "", "")
+call s:h("Number", s:number, "", "")
 call s:h("Boolean", s:blue, "", "")
-call s:h("Float", s:yellow, "", "")
+call s:h("Float", s:number, "", "")
 
 call s:h("Identifier", s:cyan, "", "")
 call s:h("Function", s:cyan, "", "")
