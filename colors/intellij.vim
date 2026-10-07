@@ -218,6 +218,7 @@ for s:g in ["javaExternal", "javaConstant", "javaTypedef", "javaOperator",
 endfor
 call s:h("javaAnnotation", s:meta, "", "")
 call s:h("javaSpecialChar", s:escape, "", "")
+call s:h("javaVarArg", s:fg, "", "")
 
 " Type and package names stay plain, and so do method calls.
 for s:t in ["class", "interface", "enum", "record", "type", "namespace",
